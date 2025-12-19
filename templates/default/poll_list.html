@@ -7,10 +7,17 @@
 </head>
 <body>
     <h1>投票主題列表-Listview</h1>
+    <a herf="{% url 'poll_create' %}">新增投票主題</a>
     <u1>
         {% for poll in poll_list %}
-        <li>{{ poll.created }}<a href="{% url 'poll_view' poll.id %}">{{ poll.subject }}</a></li>
+        <li>{{ poll.created }}
+            <a href="{% url 'poll_view' poll.id %}">{{ poll.subject }}</a>
+                <a herf="{% url 'poll_edit' poll.id %}">修改</a>
+                <a herf="{% url 'option_edit' op.id %}">刪除</a>
+        </li>
         {% endfor %}
     </u1>
 </body>
 </html>
+
+
