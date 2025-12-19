@@ -12,6 +12,7 @@
         <li>
             <a href = "{% url 'poll_vote' op.id %}">{{ op.title }}</a> - {{ op.votes }} 票</li>
                <a href = "{% url 'option_edit' op.id %}">修改</a>
+               <a href="{% url 'option_delete' op.id %}">刪除</a>
         {% endfor %}
     </ul>
 {% endblock %}
