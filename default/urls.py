@@ -2,8 +2,8 @@ from django.urls import path
 from .views import poll_list, PollList, PollView, PollVote,PollCreate, PollEdit,OptionCreate,OptionEdit,PollDelete,OptionDelete
 
 urlpatterns = [
-    path("", poll_list),
-    path("list", PollList.as_view(), name='poll_list'),
+    # path("", poll_list),
+    path("", PollList.as_view(), name='poll_list'),
     path("<int:pk>/", PollView.as_view(), name='poll_view'),
     path('<int:oid>/vote', PollVote.as_view(), name='poll_vote'),
     path('add', PollCreate.as_view(), name='poll_create'),
